@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const url = "https://restcountries.com/v3.1/all";
 
@@ -9,7 +10,6 @@ const Countries = () => {
     const response = await fetch(url);
     const countries = await response.json();
     setCountries(countries);
-    console.log(countries);
   };
 
   useEffect(() => {
@@ -35,6 +35,7 @@ const Countries = () => {
                 <h4>
                   Capital: <span>{capital ? capital[0] : "N/A"}</span>
                 </h4>
+                <Link to={`/country/${country.name.common}`}>Learn More</Link>
               </div>
             </div>
           </article>

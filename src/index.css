@@ -1,7 +1,13 @@
-@import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
+:root {
+  --Dark-Blue: hsl(209, 23%, 22%);
+  --Very-Dark-Blue: hsl(207, 26%, 17%);
+  --Very-Dark-Blue: hsl(200, 15%, 8%);
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +16,33 @@
 
 img {
   max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  background-color: hsl(207, 26%, 17%);
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--White);
+  border: 2px solid var(--Dark-Blue);
+  border-radius: 4px;
+  padding-top: 1px;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: var(--Very-Dark-Blue);
+}
+
+.btn-light {
+  background-color: var(--Dark-Blue);
+  border: 2px solid var(--Dark-Blue);
+  
 }
 
 body {
