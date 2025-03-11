@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./design/FireShot%20Capture%20011%20-%20React%20App%20-%20[localhost].png)
+![Screenshot](./design/destop-view.png)
 
 _Add a screenshot of your project here._
 
