@@ -3,11 +3,12 @@
 :root {
   --Dark-Blue: hsl(209, 23%, 22%);
   --Very-Dark-Blue: hsl(207, 26%, 17%);
-  --Very-Dark-Blue: hsl(200, 15%, 8%);
+  --Very-Dark-Blue-Secondary: hsl(200, 15%, 8%);
   --Dark-Gray: hsl(0, 0%, 52%);
   --Very-Light-Gray: hsl(0, 0%, 98%);
   --White: hsl(0, 0%, 100%);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -36,13 +37,12 @@ ul {
 
 .btn:hover {
   background-color: #fff;
-  color: var(--Very-Dark-Blue);
+  color: var(--Very-Dark-Blue-Secondary);
 }
 
 .btn-light {
   background-color: var(--Dark-Blue);
   border: 2px solid var(--Dark-Blue);
-  
 }
 
 body {
@@ -51,16 +51,27 @@ body {
   color: #fff;
 }
 
-/* header */
+body.light-theme {
+  background-color: var(--Very-Light-Gray);
+  color: var(--Very-Dark-Blue-Secondary);
+}
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #2b3743;
   padding: 10px 20px;
+  box-shadow: 0 5px 10px hsla(200, 15%, 8%, 0.1);
 }
 
-/* filter */
+body.light-theme header {
+  background-color: var(--White);
+  color: var(--Very-Dark-Blue-Secondary);
+}
+
+/* Filter */
 .filter {
   display: flex;
   flex-direction: column;
@@ -78,17 +89,29 @@ header {
   outline: none;
   padding: 12px;
   border-radius: 5px;
-  color: #fff;
+  color: var(--White);
   font-family: inherit;
   letter-spacing: 0.5px;
   width: 100%;
   margin: 0 0 30px;
 }
 
+/* Placeholder Text Visibility */
 .filter .form-control input::placeholder {
-  color: #fff;
+  color: var(--Dark-Gray);
 }
 
+body.light-theme .filter .form-control input {
+  background-color: var(--White);
+  color: var(--Very-Dark-Blue-Secondary);
+  border: 1px solid var(--Dark-Gray);
+}
+
+body.light-theme .filter .form-control input::placeholder {
+  color: var(--Dark-Gray);
+}
+
+/* Region Filter */
 .filter .region-filter .select {
   background-color: #2b3743;
   color: #fff;
@@ -99,7 +122,13 @@ header {
   border-radius: 5px;
 }
 
-/* grid */
+body.light-theme .filter .region-filter .select {
+  background-color: var(--White);
+  color: var(--Very-Dark-Blue-Secondary);
+  border: 1px solid var(--Dark-Gray);
+}
+
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -116,6 +145,12 @@ header {
   padding: 40px 20px;
   margin-top: -20px;
   border-radius: 0 0 5px 5px;
+  color: #fff;
+}
+
+body.light-theme .grid .details {
+  background-color: var(--White);
+  color: var(--Very-Dark-Blue-Secondary);
 }
 
 .grid .details h3 {
@@ -130,6 +165,7 @@ header {
   font-weight: 300;
 }
 
+/* Responsive Design */
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
